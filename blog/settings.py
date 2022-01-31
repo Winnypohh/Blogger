@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!utj%7e+=0725#fwc52k6)g3cw41^553r!2d=497el!2kx=pd4'
+SECRET_KEY = os.environ.get('SECREY_KEY','django-insecure-!utj%7e+=0725#fwc52k6)g3cw41^553r!2d=497el!2kx=pd4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['maik-blogger-app.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOUSTNAME')]
 
 
 # Application definition
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://mziwzxukmtnnsi:9d0839de75a4e51385d718fa41048934e7729175e9bd7a4403b623473ced79f0@ec2-34-250-92-138.eu-west-1.compute.amazonaws.com:5432/d2i14q8hgqoe29')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 

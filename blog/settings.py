@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!utj%7e+=0725#fwc52k6)g3cw41^553r!2d=497el!2kx=pd4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['maik-blogger-app.herokuapp.com']
 
 
 # Application definition
